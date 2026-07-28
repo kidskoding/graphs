@@ -4,26 +4,11 @@
 
 ---
 
-## Tier 0 — Vocabulary (1 day)
-
-> 📖 [docs/00-vocabulary.md](docs/00-vocabulary.md)
-
-- [ ] Node/vertex, edge
-- [ ] Directed vs undirected
-- [ ] Weighted vs unweighted
-- [ ] Cyclic vs acyclic (DAG)
-- [ ] Connected vs disconnected
-- [ ] Dense vs sparse
-- [ ] Degree / in-degree / out-degree
-- [ ] Self-loop, multi-edge
-- [ ] Tree = connected acyclic graph with `V-1` edges
-
----
-
 ## Tier 1 — Representation (highest-leverage, most-fumbled)
 
-- [ ] Adjacency list (`defaultdict(list)`) — default choice, `O(V+E)` space
-- [ ] Adjacency matrix — only when dense or need `O(1)` edge lookup
+- [x] Adjacency list (`defaultdict(list)`) — default choice, `O(V+E)` space
+
+~~- [ ] Adjacency matrix — only when dense or need `O(1)` edge lookup~~
 - [ ] Edge list — input format, MST input
 - [ ] **Building from input**: edge list → adj list. Directed adds one direction, undirected adds both.
 - [ ] **Implicit graphs**: grid cells, word strings, lock states, board configs — neighbors generated on the fly
