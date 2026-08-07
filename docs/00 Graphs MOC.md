@@ -30,7 +30,7 @@ Map of content for graph mastery. Ground-up order — each tier needs the one be
 
 ---
 
-## The meta-skill — recognizing a graph problem
+## The meta-skill: recognizing a graph problem
 
 Problems are not labeled "graph". Triggers:
 

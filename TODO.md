@@ -1,13 +1,12 @@
 # Graphs Checklist
 
-> 📖 Notes: [docs/00 Graphs MOC.md](<docs/00 Graphs MOC.md>) — Obsidian vault, wikilinked
+> Notes: [docs/00 Graphs MOC.md](<docs/00 Graphs MOC.md>): Obsidian vault, wikilinked
 
 ---
 
 ## Tier 1 — Representation (highest-leverage, most-fumbled)
 
 - [x] Adjacency list (`defaultdict(list)`) — default choice, `O(V+E)` space
-
 ~~- [ ] Adjacency matrix — only when dense or need `O(1)` edge lookup~~
 - [ ] Edge list — input format, MST input
 - [ ] **Building from input**: edge list → adj list. Directed adds one direction, undirected adds both.

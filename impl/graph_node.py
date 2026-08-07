@@ -1,3 +1,4 @@
 class GraphNode[T]:
-    val: T
-    neighbors: list[T]
+    def __init__(self, val: T):
+        self.val = val
+        self.neighbors: list[T] = []

@@ -12,9 +12,8 @@ class Graph:
 
     def remove_node(self, node: GraphNode):
         del self.adj[node]
-        for neighbors in self.adj.values():
-            if node in neighbors:
-                neighbors.remove(node)
+        for key in self.adj:
+            self.adj[key] = [neighbor for neighbor in self.adj[key] if neighbor != node]
 
     def add_edge(self, u: GraphNode, v: GraphNode):
         if u not in self.adj or v not in self.adj:
