@@ -5,6 +5,9 @@ on:
     branches: [master]
   pull_request:
 
+env:
+  NIX_CONFIG: experimental-features = nix-command flakes
+
 jobs:
   test:
     runs-on: codeberg-tiny
@@ -20,3 +23,23 @@ jobs:
 
       - name: test
         run: uv run pytest
+
+  format:
+    runs-on: codeberg-small
+    container:
+      image: nixos/nix:latest
+    steps:
+      - run: |
+          git clone "${{ github.server_url }}/${{ github.repository }}.git" .
+          git checkout "${{ github.sha }}"
+      - run: nix run --inputs-from . nixpkgs#alejandra -- --check .
+
+  flake-check:
+    runs-on: codeberg-medium
+    container:
+      image: nixos/nix:latest
+    steps:
+      - run: |
+          git clone "${{ github.server_url }}/${{ github.repository }}.git" .
+          git checkout "${{ github.sha }}"
+      - run: nix flake check
