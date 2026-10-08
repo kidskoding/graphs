@@ -1,5 +1,7 @@
 from collections import defaultdict
+
 from impl.graph_node import GraphNode
+
 
 class Graph:
     def __init__(self, directed=False):

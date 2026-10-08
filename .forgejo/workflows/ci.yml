@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: codeberg-tiny
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v4
+
+      - uses: https://github.com/astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: lint
+        run: uvx ruff check .
+
+      - name: test
+        run: uv run pytest
